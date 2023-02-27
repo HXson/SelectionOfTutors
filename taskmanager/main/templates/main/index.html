@@ -1,0 +1,82 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Главная страница
+{% endblock %}
+
+{% block content %}
+
+  <div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="mainTutors.png" alt="Tutors main" width="700" height="500">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold lh-1 mb-3">Мы поможем вам найти лучшего репетитора!</h1>
+        <p class="lead">Найти репетитора онлайн поможет каталог, в котором мы собрали всю важную информацию о преподавателях. Познакомьтесь с ними, прежде чем записатьcя на занятия — узнайте стаж работы, навыки, направление обучения и актуальную цену за урок. </p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Найти!</button>
+          <a href="{% url 'create' %}" class="btn btn-outline-secondary btn-lg px-4">Я репетитор</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="carousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+      </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <svg class="bd-placeholder-img" width="100%" height="100%" 
+        xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" 
+        focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+       <p> <img class="img-fluid" src ="Formula-pana.svg" alt="Tutors1"> Опытные репетиторы</p>
+      </div>
+
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" 
+        xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" 
+        focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+        <img class="img-fluid" src="Formula-amico.svg" alt="Tutors2"> Безопасное общение
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" 
+        xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" 
+        focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+          <img class="img-fluid" src="Formula-bro.svg" alt="Tutors3"> Гибкий график
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" 
+        xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" 
+        focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+        <img class="img-fluid" src="Formula-rafiki.svg" alt="Tutors4"> Доступные цены
+    </div>
+    </div>
+    <!-- Элементы управления -->
+    <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Предыдущий</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Следующий</span>
+    </a>
+  </div>
+
+
+    <h1>Наши чудесные специалисты</h1>
+    {% if tasks %}
+        {% for el in tasks %}
+            <div class = 'alert alert-warning mt-2'>
+                <h3>{{ el.title }}</h3>
+                <p>{{ el.task }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Пока нет никаких записей(</p>
+    {% endif %}
+{% endblock %}

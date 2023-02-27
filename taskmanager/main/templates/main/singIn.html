@@ -1,0 +1,36 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Войти
+{% endblock %}
+
+{% block content %}
+<link href="sign-in.css" rel="stylesheet">
+<body class="text-center">
+    
+    <main class="form-signin w-100 m-auto">
+      <form>
+       
+        <h1 class="h3 mb-3 fw-normal">
+            <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Вход</font></font></h1>
+    
+        <div class="form-floating">
+          <input type="email" class="form-control" id="floatingInput" placeholder="имя@пример.com">
+          <label for="floatingInput"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Адрес электронной почты</font></font></label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Пароль">
+          <label for="floatingPassword"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Пароль</font></font></label>
+        </div>
+    
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Запомнить меня
+          </font></font></label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Войти</font></font></button>
+        
+      </form>
+    </main>
+{% endblock %}
