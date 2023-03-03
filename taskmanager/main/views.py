@@ -10,7 +10,7 @@ def about(request):
     return render(request, 'main/about.html')
 
 def registration(request):
-    return render(request, 'main/registration.html')
+    return render(request, 'main/login.html')
 
 def singIn(request):
     return render(request, 'main/singIn.html')
